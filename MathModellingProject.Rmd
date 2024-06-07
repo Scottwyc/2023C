@@ -1,11 +1,11 @@
 ---
 # wordwrapline:  12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345
-title: "数模大作业：23年国赛C题"
-# subtitle : "大作业"
+title: "基于xx的定价与补货决策"
+subtitle : "数模大作业：23年国赛C题"
 author: 
   - 吴阳诚 
-  - 莫
-  - 姜
+  - 莫力炬
+  - 姜欣妍
 # date: "`r Sys.Date()`"
 
 documentclass: ctexart
@@ -73,17 +73,20 @@ set.seed(210810507)
 
 # 摘要 {.unnumbered}
 
-为助力生鲜商超提高盈利能力，本文建立了动态调整规划模型、灰色系统预测模型、线性回归模 型、二次规划模型和混合整数规划模型，分析蔬菜类商品销售量的分布规律和相关关系及其与成本加 成定价的关系，并设计利润最大的补货计划和定价策略。
+为助力生鲜商超提高盈利能力，本文建立了动态调整规划模型、灰色系统预测模型、线性回归模型、二次规划模型和混合整数规划模型，
+分析蔬菜类商品销售量的分布规律和相关关系及其与成本加 成定价的关系，并设计利润最大的补货计划和定价策略。
 
 **关键词**: 动态调整规划算法 \quad 灰色系统预测 \quad 二次规划模型 \quad 混合整数规划
 
 **分工**:
 
-1.  吴：
+1.  吴阳诚：
 
-2.  莫：
+2.  莫力炬：
 
-3.  姜：
+3.  姜欣妍：
+
+**题目来源**: 2023年全国大学生数学建模竞赛C题
 
 \newpage
 
@@ -95,13 +98,38 @@ set.seed(210810507)
 
 > 数学建模是一个重要的学习思路。 可以看到，模型的好坏。
 
-# 背景
+# 问题重述与问题分析
 
-背景
+## 问题一
 
-# 模型
+## 问题二
+
+## 问题三
+
+## 问题四
+
+
+# 模型假设
+
 
 模型示例 $\int_{\mu}^{} K(\mu^2) \,dx$
+
+# 符号及变量说明
+
+# 模型建立
+
+# 模型检验
+
+
+
+# 模型求解
+
+
+# 模型改进
+
+
+# 模型推广与应用
+
 
 ## 第一部分
 
@@ -118,6 +146,8 @@ knitr::include_graphics("./")
 ### 好好好
 
 #### 学习
+
+\newline
 
 到了四级标题就不会换行了
 
@@ -206,14 +236,6 @@ plotTest3()
 尝试python部分
 
 ```{python}
-import numpy as np
-import matplotlib.pyplot as plt
-
-t = np.arange(0.0, 5.0, 0.01)
-s = np.cos(2*t)
-
-plt.plot(s,t)
-plt.show()
 
 ```
 
@@ -224,6 +246,11 @@ plt.show()
 # 参考文献
 
 [1]欧阳慧婷,邹芳,刘鹏飞,等.基于 AQI 指数的长沙市空气质量分析初探[J].环境与发 展,2019,31(11):113-118.DOI:10.16647/j.cnki.cn15-1369/X.2019.11.064.
+
+temp:
+1. 司守奎、孙兆亮.数学建模算法与应用，第2版.国防工业出版社，2015.
+2. Paul A. Samuelson.Economics. McGraw-Hill,1948.Page769.
+3. 张良均、谭立云、刘名军、江建明.Python数据分析与挖掘实践，第2版.机械工业出版社，201
 
 # 代码附录
 
@@ -247,7 +274,7 @@ plotTest1 = function(){
     plot(X_clear, y_clear,
     xlab = TeX("$X_{clear}$"),
     ylab = TeX("$Y_{clear}$"),
-    main = TeX(sprintf("$figure: %d xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx$",i))  
+    main = TeX(sprintf("$figure: %d xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx$",i))  
     )
   }
 }

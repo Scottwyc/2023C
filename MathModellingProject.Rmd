@@ -51,7 +51,8 @@ p_load(
   haven,stringr, broom, tidyverse
 ) # data wrangling # data wrangling
 
-path = "d:/aaaStudy/R_Notes/RmdTemplateChinese" # should set manually
+# D:\aaaStudy\MathModel_Optimization\Project\2023C
+path = "d:/aaaStudy/MathModel_Optimization/Project/2023C" # should set manually
 setwd(path)
 getwd()
 

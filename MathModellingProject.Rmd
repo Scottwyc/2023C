@@ -89,7 +89,7 @@ set.seed(210810507)
 
 # 引言
 
-这是一个初稿模板.
+&emsp;&emsp; 这是一个初稿模板.
 
 参考：[R markdown基础知识](https://cosname.github.io/rmarkdown-guide/rmarkdown-base.html#markdown-figure)
 
@@ -107,12 +107,12 @@ set.seed(210810507)
 
 插入图片(yes)
 
-![figure 1](./PhiRes_mikasa1_onechannell_resize2/Phi_Mar1_C1_182_C2_43_Iter10000_deltT_1e-1.png)
+![figure 1](./)
 
 再来一张：
 
 ```{r, out.width = "100%", fig.cap = "figure 2"}
-knitr::include_graphics("./PhiRes_mikasa1_onechannell_resize2/Phi_Mar10_C1_204_C2_50_Iter10000_deltT_1e-1.png")
+knitr::include_graphics("./")
 ```
 
 ### 好好好

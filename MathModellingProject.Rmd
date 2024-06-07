@@ -1,0 +1,260 @@
+---
+# wordwrapline:  12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345
+title: "数模大作业：23年国赛C题"
+# subtitle : "大作业"
+author: 
+  - 吴阳诚 
+  - 莫
+  - 姜
+# date: "`r Sys.Date()`"
+
+documentclass: ctexart
+geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"
+fontsize: "10pt"
+papersize: "a4"
+output:
+  pdf_document: 
+    number_sections: true
+    toc: true
+    toc_depth: 5
+    latex_engine: xelatex  # for better chinese
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+  tufte::tufte_handout: default  # 模仿了统计学家 Edward Tufte 以及物理学家费曼的教科书的风格
+  # foo::bar_document: default 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, dpi = 72, 
+fig.align = 'center',
+engine.path = list(
+  python = 'd:/Anaconda3/python.exe'
+)
+) 
+# echo=False for not showing the codes but with results, echo=TRUE: both codes and results
+# include=FALSE, not showing codes and results, but operated!
+
+options(digits = 4)   # 有效位数
+# knitr.table.format = 'latex'  # may add |c| the erect line..
+options(knitr.table.vline = "")  # del the vertical line for kable
+
+
+if (!require(pacman)) install.packages("pacman")
+library(pacman)
+
+p_load(
+  flextable, # Visualization
+  # Applied
+  # dependency
+  haven,stringr, broom, tidyverse
+) # data wrangling # data wrangling
+
+path = "d:/aaaStudy/R_Notes/RmdTemplateChinese" # should set manually
+setwd(path)
+getwd()
+
+# Functions preload
+set.seed(210810507)
+```
+
+```{r wrapRegion,include=FALSE}
+# show the wrap region for A4 pdf!
+# x = 12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345+12345
+```
+
+```{r install, include=FALSE}
+# install.packages()
+# install.packages("formatR")
+```
+
+\newpage
+
+# 摘要 {.unnumbered}
+
+为助力生鲜商超提高盈利能力，本文建立了动态调整规划模型、灰色系统预测模型、线性回归模 型、二次规划模型和混合整数规划模型，分析蔬菜类商品销售量的分布规律和相关关系及其与成本加 成定价的关系，并设计利润最大的补货计划和定价策略。
+
+**关键词**: 动态调整规划算法 \quad 灰色系统预测 \quad 二次规划模型 \quad 混合整数规划
+
+**分工**:
+
+1.  吴：
+
+2.  莫：
+
+3.  姜：
+
+\newpage
+
+# 引言
+
+这是一个初稿模板.
+
+参考：[R markdown基础知识](https://cosname.github.io/rmarkdown-guide/rmarkdown-base.html#markdown-figure)
+
+> 数学建模是一个重要的学习思路。 可以看到，模型的好坏。
+
+# 背景
+
+背景
+
+# 模型
+
+模型示例 $\int_{\mu}^{} K(\mu^2) \,dx$
+
+## 第一部分
+
+插入图片(yes)
+
+![figure 1](./PhiRes_mikasa1_onechannell_resize2/Phi_Mar1_C1_182_C2_43_Iter10000_deltT_1e-1.png)
+
+再来一张：
+
+```{r, out.width = "100%", fig.cap = "figure 2"}
+knitr::include_graphics("./PhiRes_mikasa1_onechannell_resize2/Phi_Mar10_C1_204_C2_50_Iter10000_deltT_1e-1.png")
+```
+
+### 好好好
+
+#### 学习
+
+到了四级标题就不会换行了
+
+```{r}
+library(latex2exp)
+mat0 = matrix(c(17.14493, 33.00000 , 67.78261 ,1.546377 ,145.6667 , 40.10145 , 
+301.4203,26.06818 , 45.13636, 108.09091 , 2.356818 ,184.8864,  61.86364,  203.5455 ), 2, 7)
+
+rownames(mat0) = c("center1", "center2")
+colnames(mat0) = c("$SO_2$", "$NO_2$", "$PM_{10}$", "$CO$", "$O_3$", "$PM_{2.5}$", "$GoodDays$")
+
+table0 = data.frame(mat0)
+
+knitr::kable(table0,
+escape = FALSE,
+ align = "c", caption = "环境")
+```
+
+原始：
+
+| 2 centers |  $SO_2$  |  $NO_2$  |  $PM_{10}$|   $CO$   |  $O_3$   |$PM_{2.5}$| $GoodDays$ |
+|:---------:|:--------:|:--------:|:---------:|:--------:|:--------:|:--------:|:----------:|
+|  center1  | 17.14493 | 33.00000 | 67.78261  | 1.546377 | 145.6667 | 40.10145 |  301.4203  |
+|  center2  | 26.06818 | 45.13636 | 108.09091 | 2.356818 | 184.8864 | 61.86364 |  203.5455  |
+
+: environment
+
+## 第二部分
+
+模型如下。
+
+拟合结果如下：
+
+```{r}
+x <- 1:10; y <- x^2; lmr <- lm(y ~ x)
+co <- summary(lmr)$coefficients
+knitr::kable(co, align = 'c', caption = "Summary") # c: center
+```
+
+# 模型求解
+
+再画一张图，设置cap （不成功？？）
+
+```{r,fig.show= "hold",out.width="50%", fig.cap="figure4:$\\sigma_i$"}
+library(latex2exp)
+
+plotTest2 = function(){
+  for(i in 1:2){
+    X_clear = seq(1,100)
+    y_clear = i*X_clear
+    plot(X_clear, y_clear,
+    xlab = TeX("$X_{clear}$"),
+    ylab = TeX("$Y_{clear}$"),
+    # main = TeX(sprintf("$figure:%d$",i)) # TeX includes sprintf
+    )
+  }
+}
+```
+
+```{r}
+plotTest2()
+```
+
+再来：
+
+```{r,fig.show= "hold",out.width="50%", fig.cap="figure4:$\\sigma_i$"}
+library(latex2exp)
+
+plotTest3 = function(){
+  for(i in 1:1){
+    X_clear = seq(1,100)
+    y_clear = i*X_clear
+    plot(X_clear, y_clear,
+    xlab = TeX("$X_{clear}$"),
+    ylab = TeX("$Y_{clear}$"),
+    main = TeX(sprintf("$figure:%d$",i)) # TeX includes sprintf
+    )
+  }
+}
+```
+
+```{r}
+plotTest3()
+```
+
+尝试python部分
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.arange(0.0, 5.0, 0.01)
+s = np.cos(2*t)
+
+plt.plot(s,t)
+plt.show()
+
+```
+
+# 总结
+
+好好写
+
+# 参考文献
+
+[1]欧阳慧婷,邹芳,刘鹏飞,等.基于 AQI 指数的长沙市空气质量分析初探[J].环境与发 展,2019,31(11):113-118.DOI:10.16647/j.cnki.cn15-1369/X.2019.11.064.
+
+# 代码附录
+
+## 模型一
+
+```{r appendixSet, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE) 
+```
+
+```{r, tidy=TRUE,  tidy.opts=list(width.cutoff=72)}
+## plot
+
+## tidy does not work
+
+library(latex2exp)
+
+plotTest1 = function(){
+  for(i in 1:4){
+    X_clear = seq(1,100)
+    y_clear = i*X_clear
+    plot(X_clear, y_clear,
+    xlab = TeX("$X_{clear}$"),
+    ylab = TeX("$Y_{clear}$"),
+    main = TeX(sprintf("$figure: %d xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx$",i))  
+    )
+  }
+}
+```
+
+```{r}
+x <- 1:10; y <- x^2; lmr <- lm(y ~ x)
+co <- summary(lmr)$coefficients
+knitr::kable(co)
+```

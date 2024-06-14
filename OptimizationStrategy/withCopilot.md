@@ -75,7 +75,18 @@ bounds = [(0, data['n_i'][i]) for i in range(6)] + [(0, None)]*6 + [(None, None)
 # Solve
 result = minimize(objective, initial_guess, method='SLSQP', bounds=bounds, constraints=constraints)
 
-``
+```
+
+# Q3.1
+
+I need you to help me with python code based on soveQ2.md to solve Q2. I need preprocess first.
+
+# Q3.2
+
+if the key vaule of the dict_total is a list, how can I map into different cols
+
+
+
 
 
 

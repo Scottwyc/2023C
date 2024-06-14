@@ -3,7 +3,8 @@ import json
 
 # 读取JSON文件
 with open("category_dict.json", "r") as file:
-    category_dict = json.load(file)
+    category_dict = json.load(file)  # it is a dict: {'item name': 'category name}
+
 
 # pathbase = r"D:/aaaStudy/MathModel_Optimization/Project/2023C"
 # ../ can get to father folder!
